@@ -1,62 +1,5 @@
-<?php 
-    $categories=App::get("database")->all("categories");
-?>
-<?php include("./partials/header.php") ?>
-    <!-- header -->
-    <header class="container-fluid">
-        <div class="container w-50">
-            <div class="row align-items-center" style="padding-top: 350px;">
-                <div class="col-lg-10 col-xs-12 mx-auto">
-                    <input type="text" class="form-control form-control-lg p-2 h4" placeholder="Search...">
-                </div>
-                <div class="col-lg-2 d-none d-xl-block">
-                    <img src="./images/search.png" alt="" class="w-40 bg-info p-3 rounded-circle mb-3" style="cursor: pointer;">
-                </div>
-                
-            </div>
-        </div>
-    </header>
-    <!-- endheader -->
-
-  
-
-    <!-- categories -->
-    <section class="container-fluid bg-light py-5">
-        <div class="container">
-            <h1 class="text-center">Explore Categories</h1>
-            <div class="categories-contianer row d-flex justify-content-around text-center">
-                <?php foreach($categories as $category):?>
-                    <div class="card  rounded-circle mt-5" style="width: 18rem;">
-                        <img src="../images/<?=$category["category_image"]?>" class="card rounded-circle-img-top rounded-3 w-100 h-100" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-center h4 mt-2"><?=$category['category_name']?></h5>
-                        </div>
-                    </div>
-                <?php endforeach;?>
-               
-                <!-- <div class="card rounded-circle mt-5" style="width: 18rem;">
-                    <img src="../images/dowells.jpg" class="card-img-top rounded-3 w-100 h-100" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center h4 mt-2">McDowells</h5>
-                    </div>
-                </div>
-                <div class="card rounded-circle mt-5" style="width: 18rem;">
-                    <img src="../images/king.jpg" class="card-img-top rounded-3  w-100 h-100" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center h4 mt-2">KingFisher</h5>
-                    </div>
-                </div> -->
-                <a href="" class="mt-5 h6 text-danger">See All Categories</a>
-            </div>
-           
-        </div>
-    </section>
-    <!-- end categories -->
-
-   
-    
-    <!-- footer -->
-    <footer class="container-fluid py-5">
+  <!-- footer -->
+  <footer class="container-fluid py-5">
         <div class="container">
             <div class="icon-container text-center">
                 <a href="http://facebook.com/">
@@ -73,4 +16,14 @@
         </div>
     </footer>
     <!-- endfooter -->
-  <?php include("./partials/footer.php") ?>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" crossorigin="anonymous"></script> 
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" crossorigin="anonymous"></script> 
+
+
+</script>
+</body>
+</html>

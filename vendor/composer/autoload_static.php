@@ -7,10 +7,20 @@ namespace Composer\Autoload;
 class ComposerStaticInit73f903ef3ef7bbeb6aa5f99ec5ddd078
 {
     public static $classMap = array (
+        'AdminController' => __DIR__ . '/../..' . '/Controllers/AdminController.php',
+        'App' => __DIR__ . '/../..' . '/core/App.php',
+        'Auth' => __DIR__ . '/../..' . '/core/Helpers/Auth.php',
+        'AuthController' => __DIR__ . '/../..' . '/Controllers/AuthController.php',
+        'CategoriesController' => __DIR__ . '/../..' . '/Controllers/CategoriesController.php',
         'ComposerAutoloaderInit73f903ef3ef7bbeb6aa5f99ec5ddd078' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit73f903ef3ef7bbeb6aa5f99ec5ddd078' => __DIR__ . '/..' . '/composer/autoload_static.php',
+        'Connection' => __DIR__ . '/../..' . '/core/database/Connection.php',
+        'HTTP' => __DIR__ . '/../..' . '/core/Helpers/HTTP.php',
+        'OrderController' => __DIR__ . '/../..' . '/Controllers/OrderController.php',
         'PagesController' => __DIR__ . '/../..' . '/Controllers/PagesController.php',
+        'ProductController' => __DIR__ . '/../..' . '/Controllers/ProductController.php',
+        'QueryBuilder' => __DIR__ . '/../..' . '/core/database/QueryBuilder.php',
         'Request' => __DIR__ . '/../..' . '/core/Request.php',
         'Router' => __DIR__ . '/../..' . '/core/Router.php',
     );

@@ -70,4 +70,46 @@ footer{
      width: 25px;
      margin-right: 20px;
  }
+ .nav-item span{
+     position: absolute;
+     right: 80px;
+     bottom: 70px;
+     background-color: #e74c3c;
+     padding: 3px 9px;
+     border-radius: 15px;
+     color: #fff;;
+ }
+ @media screen and (max-width:1400px){
+    .nav-item span{
+        right: 130px;
+        bottom: 65px;
+    }
+ }
+ @media screen and (max-width:1200px){
+    .nav-item span{
+        right: 50px;
+        bottom: 65px;
+    }
+ }
+ @media screen and (max-width:800px){
+    .nav-item span{
+        right: 660px;
+        bottom: 35px;
+    }
+ }
+ @media screen and (max-width:600px){
+    .nav-item span{
+        right: 340px;
+        bottom: 35px;
+    }
+ }
+ @media screen and (max-width:400px){
+    .nav-item span{
+        right: 300px;
+        bottom: 35px;
+    }
+ }
  
+ .stirke{
+    text-decoration: line-through;
+}

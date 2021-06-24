@@ -1,3 +1,7 @@
+<?php
+     $categories=App::get("database")->explore("categories",0);
+     $products=App::get("database")->explore("products",0);
+?>
 <?php include("./partials/header.php") ?>
 
     <!-- end navigation -->
@@ -30,25 +34,15 @@
         <div class="container">
             <h1 class="text-center">Explore Categories</h1>
             <div class="categories-contianer row d-flex justify-content-around text-center">
-                <div class="card rounded-circle rounded-circle mt-5" style="width: 18rem;">
-                    <img src="../images/vodka.jpg" class="card rounded-circle-img-top rounded-3 w-100 h-100" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center h4 mt-2">Absolute Vodka</h5>
+                <?php foreach($categories as $category):?>
+                    <div class="card rounded-circle rounded-circle mt-5" style="width: 18rem;">
+                        <img src="../images/<?=$category['category_image']?>" class="card rounded-circle-img-top rounded-3 w-100 h-100" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center h4 mt-2"><?=$category['category_name']?></h5>
+                        </div>
                     </div>
-                </div>
-                <div class="card rounded-circle mt-5" style="width: 18rem;">
-                    <img src="../images/dowells.jpg" class="card-img-top rounded-3 w-100 h-100" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center h4 mt-2">McDowells</h5>
-                    </div>
-                </div>
-                <div class="card rounded-circle mt-5" style="width: 18rem;">
-                    <img src="../images/king.jpg" class="card-img-top rounded-3  w-100 h-100" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center h4 mt-2">KingFisher</h5>
-                    </div>
-                </div>
-                <a href="" class="mt-5 h6 text-danger">See All Categories</a>
+                <?php endforeach;?>
+                <a href="/categories" class="mt-5 h6 text-danger">See All Categories</a>
             </div>
            
         </div>
@@ -61,106 +55,26 @@
             <h1 class="text-center">Explore Products</h1>
             <div class="alcohols-container container text-center">
                 <div class="row justify-content-around align-items-center">
-                    <div class="col-12 col-lg-6 col-md-6 col-xl-4">
-                        <div class="card rounded-circle mt-5" style="width: 20rem;">
-                            <figure class="imghvr-push-right">
-                                <img src="../images/vodka_absolute.jpeg" style="height: 250px;">
-                            <figcaption>
-                                <div style="text-align:center">
-                                    <h3 class="mt-5">Absolute Vodka</h3>
-                                    <span>$30</span>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                                    <a href="#"><button class="btn bg-danger text-white">Order Now</button></a>
-                                </div>
-                            </figcaption>
-                            <a href="#"></a>
-                            </figure>
+                    <?php foreach($products as $product):?>
+                        <div class="col-12 col-lg-6 col-md-6 col-xl-4">
+                            <div class="card rounded-circle mt-5" style="width: 20rem;">
+                                <figure class="imghvr-push-right">
+                                    <img src="../images/<?=$product['image']?>" style="height: 250px;">
+                                    <figcaption>
+                                        <div style="text-align:center">
+                                            <h3 class="mt-5"><?=$product['name']?></h3>
+                                            <p><?=substr($product['description'],0,100)?></p>
+                                            <h3>$ <?=$product['price']?></h3>
+                                           
+                                            <a href="/add-to-cart?id=<?=$product['id']?>"><button class="btn bg-danger text-white">Order Now</button></a>
+                                        </div>
+                                    </figcaption>
+                        
+                                </figure>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-lg-6 col-md-6 col-xl-4">
-                        <div class="card rounded-circle mt-5" style="width: 20rem;">
-                            <figure class="imghvr-push-right">
-                                <img src="../images/dowells.jpg" style="height: 250px;">
-                            <figcaption>
-                                <div style="text-align:center">
-                                    <h3 class="mt-5">McDowels</h3>
-                                    <h5>$50</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                                    <a href="#"><button class="btn bg-danger text-white">Order Now</button></a>
-                                </div>
-                                
-                            </figcaption>
-                            <a href="#"></a>
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6 col-md-6 col-xl-4">
-                        <div class="card rounded-circle mt-5" style="width: 20rem;">
-                            <figure class="imghvr-push-right">
-                                <img src="../images/king.jpg" style="height: 250px;">
-                            <figcaption>
-                                <div style="text-align:center">
-                                    <h3 class="mt-5">KingFisher</h3>
-                                    <h5>$60</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                                    <a href="#"><button class="btn bg-danger text-white">Order Now</button></a>
-                                </div>
-                            </figcaption>
-                            <a href="#"></a>
-                            </figure>
-                        </div>
-                    </div>
-
-
-                    <div class="col-12 col-lg-6 col-md-6 col-xl-4">
-                        <div class="card rounded-circle mt-5" style="width: 20rem;">
-                            <figure class="imghvr-push-right">
-                                <img src="../images/vodka_zubrowka.jpeg" style="height: 250px;">
-                            <figcaption>
-                                <div style="text-align:center">
-                                    <h3 class="mt-5">KingFisher</h3>
-                                    <h5>$60</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                                    <a href="#"><button class="btn bg-danger text-white">Order Now</button></a>
-                                </div>
-                            </figcaption>
-                            <a href="#"></a>
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6 col-md-6 col-xl-4">
-                        <div class="card rounded-circle mt-5" style="width: 20rem;">
-                            <figure class="imghvr-push-right">
-                                <img src="../images/vodka_soplica.jpeg" style="height: 250px;">
-                            <figcaption>
-                                <div style="text-align:center">
-                                    <h3 class="mt-5">KingFisher</h3>
-                                    <h5>$60</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                                    <a href="#"><button class="btn bg-danger text-white">Order Now</button></a>
-                                </div>
-                            </figcaption>
-                            <a href="#"></a>
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6 col-md-6 col-xl-4">
-                        <div class="card rounded-circle mt-5" style="width: 20rem;">
-                            <figure class="imghvr-push-right">
-                                <img src="../images/vodka_smirn.jpeg" style="height: 250px;">
-                            <figcaption>
-                                <div style="text-align:center">
-                                    <h3 class="mt-5">KingFisher</h3>
-                                    <h5>$60</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                                    <a href="#"><button class="btn bg-danger text-white">Order Now</button></a>
-                                </div>
-                            </figcaption>
-                            <a href="#"></a>
-                            </figure>
-                        </div>
-                    </div>
-                    <a href="" class="mt-5 text-danger">See All Products</a>
+                    <?php endforeach;?>
+                    <a href="/products" class="mt-5 text-danger">See All Products</a>
                 </div>
               
               
@@ -169,7 +83,7 @@
         </div>
     </section>
     <!-- end liquor -->
-    
+
     <!-- footer -->
     <footer class="container-fluid py-5">
         <div class="container">
